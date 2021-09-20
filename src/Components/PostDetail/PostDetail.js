@@ -7,7 +7,7 @@ const PostDetail = ({ postId }) => {
   let currentPost = {};
 
   for (let i = 0; i < posts.length; i++) {
-    if (posts[i].postId == postId) {
+    if (posts[i].postId.toString() === postId.toString()) {
       currentPost = posts[i];
     }
   }
@@ -15,7 +15,7 @@ const PostDetail = ({ postId }) => {
 
   return (
     <div>
-      <Post post={currentPost} />
+      {currentPost === {} ? <h1>Error404</h1> : <Post post={currentPost} />}
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Post = ({ post }) => {
   let showComments = useSelector((state) => {
     return state.posts.find((cuurentPost) => {
-      return cuurentPost.postId === post.postId;
+      return cuurentPost.postId.toString() === post.postId.toString();
     }).showComments;
   });
 
